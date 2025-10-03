@@ -1,15 +1,19 @@
 {
   "name": "ga2-bc0be6",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {}
+    "ghcr.io/devcontainers/features/python:1": {},
+    // ADD THIS FEATURE to install uv directly into the container
+    "ghcr.io/astral-sh/devcontainer-features/uv:0": {}
   },
   "customizations": {
     "vscode": {
+      // The extension is still good for editor integration
       "extensions": [
         "astral-sh.uv",
         "ms-python.python"
       ]
     }
   },
+  // This command will now work because the feature installed uv
   "postCreateCommand": "uv pip install fastapi"
 }
